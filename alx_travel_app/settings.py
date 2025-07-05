@@ -1,7 +1,12 @@
 import environ
+import os
+from pathlib import Path
+
+# Define BASE_DIR
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
-environ.Env.read_env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 """
 Django settings for alx_travel_app project.
